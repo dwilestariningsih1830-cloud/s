@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- SEO و بيانات المشاركة الاحترافية (Preview when sharing link) -->
+    <title>فريق الأمن السيبراني | انضم إلينا</title>
+    <meta name="description" content="منصة متخصصة في محتوى الأمن السيبراني، اختراق أخلاقي، حماية رقمية. تابع حساباتنا وانضم إلى فريق الهاكرز الأخلاقيين.">
+    <meta name="keywords" content="أمن سيبراني, اختراق أخلاقي, حماية, سيبراني, فريق, انضم إلينا">
+    <meta name="author" content="Cyber Guardians">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="فريق الأمن السيبراني | Cyber Guardians">
+    <meta property="og:description" content="احتراف الأمن السيبراني – شروحات، ثغرات، أدوات حماية. تابع قنواتنا وانضم إلى الفريق.">
+    <meta property="og:image" content="https://i.ibb.co/7XzNkRZ/cyber-preview.jpg">
+    <!-- للحصول على صورة دائمة، استخدم رابط صورة حقيقي. إذا لم يظهر يمكنك استبدال الرابط بأي صورة تستضيفها بنفسك -->
+    <meta property="og:image:alt" content="صورة دعائية لفريق الأمن السيبراني">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:site_name" content="Cyber Guardians">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="فريق الأمن السيبراني | انضم إلينا">
+    <meta name="twitter:description" content="اكتشف محتوى الأمن السيبراني، دروس، تحديات CTF، وانضم إلى فريق الخبراء.">
+    <meta name="twitter:image" content="https://i.ibb.co/7XzNkRZ/cyber-preview.jpg">
+    
+    <!-- أيقونة الموقع (favicon) اختيارية -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+    
+    <!-- Font Awesome 6 (أيقونات التطبيقات) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Tajawal', system-ui, -apple-system, 'Cairo', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #0a0f1e, #03060c);
+            color: #eef5ff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(10, 20, 30, 0.65);
+            backdrop-filter: blur(12px);
+            border-radius: 3rem;
+            border: 1px solid rgba(0, 255, 255, 0.25);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 255, 0.2);
+            padding: 2.5rem 2rem;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .cyber-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .glitch {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0ff;
+            text-shadow: 0.05em 0 0 rgba(255,0,0,0.5), -0.05em -0.025em 0 rgba(0,255,0,0.5);
+            animation: glitch-pulse 2s infinite;
+        }
+
+        @keyframes glitch-pulse {
+            0%, 100% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.4), -0.05em -0.025em 0 rgba(0,255,0,0.4); }
+            50% { text-shadow: -0.05em 0.025em 0 rgba(255,0,0,0.6), 0.05em 0 0 rgba(0,255,255,0.6); }
+        }
+
+        .sub {
+            font-size: 1.1rem;
+            color: #aaf0ff;
+            border-top: 1px dashed #0ff;
+            display: inline-block;
+            padding-top: 0.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 2.8rem;
+        }
+
+        .hero h2 {
+            font-size: 1.9rem;
+            background: linear-gradient(135deg, #fff, #0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 1rem auto 0;
+            line-height: 1.6;
+            color: #ccddf8;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .social-card {
+            background: rgba(0, 20, 30, 0.6);
+            backdrop-filter: blur(4px);
+            border-radius: 2rem;
+            padding: 1.2rem 1rem;
+            width: 220px;
+            text-align: center;
+            transition: 0.25s;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+        }
+
+        .social-card:hover {
+            transform: translateY(-6px);
+            border-color: #0ff;
+            background: rgba(0, 40, 55, 0.8);
+            box-shadow: 0 0 18px rgba(0, 255, 255, 0.4);
+        }
+
+        .social-icon {
+            font-size: 3.5rem;
+            margin-bottom: 0.7rem;
+            display: inline-block;
+        }
+
+        .social-card:hover .fa-telegram { color: #26A5E4; text-shadow: 0 0 8px #26A5E4; }
+        .social-card:hover .fa-tiktok { color: #ffffff; text-shadow: 0 0 8px #ff0050; }
+        .social-card:hover .fa-instagram { color: #d62976; text-shadow: 0 0 8px #d62976; }
+
+        .social-name {
+            font-weight: bold;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin-top: 0.2rem;
+        }
+
+        .social-user {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            word-break: break-word;
+            margin-top: 5px;
+            font-family: monospace;
+        }
+
+        .btn-social {
+            display: inline-block;
+            margin-top: 14px;
+            background: linear-gradient(90deg, #00ccaa, #00aaff);
+            border: none;
+            padding: 6px 18px;
+            border-radius: 40px;
+            color: #0a0f1e;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+
+        .btn-social:hover {
+            background: #0ff;
+            box-shadow: 0 0 10px cyan;
+            color: black;
+        }
+
+        .join-section {
+            background: linear-gradient(120deg, #02121f, #00121c);
+            padding: 1.8rem;
+            border-radius: 2rem;
+            text-align: center;
+            margin: 2rem 0 1.2rem;
+            border: 1px solid #0ff8;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .join-section::after {
+            content: ">";
+            font-family: monospace;
+            font-size: 100px;
+            opacity: 0.03;
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+
+        .join-title {
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #fee, #0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .join-desc {
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .join-btn {
+            background: none;
+            border: 2px solid #0ff;
+            color: #0ff;
+            padding: 12px 32px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .join-btn:hover {
+            background: #0ff;
+            color: #03060c;
+            box-shadow: 0 0 20px cyan;
+            border-color: cyan;
+        }
+
+        .follow-text {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0,255,255,0.3);
+            padding-top: 1.8rem;
+        }
+
+        .fingerprint {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #5f9eff;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 680px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .glitch {
+                font-size: 1.9rem;
+            }
+            .social-links {
+                gap: 1rem;
+            }
+            .social-card {
+                width: 170px;
+                padding: 1rem 0.5rem;
+            }
+            .social-icon {
+                font-size: 2.8rem;
+            }
+            .join-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="cyber-header">
+        <div class="glitch">#CYBER GUARDIANS</div>
+        <div class="sub">الأمن السيبراني | اختراق أخلاقي | حماية رقمية</div>
+    </div>
+
+    <div class="hero">
+        <h2>نحن خط الدفاع الأول</h2>
+        <p>منصة متخصصة في محتوى الأمن السيبراني، نشارك أحدث الثغرات، أدوات الحماية، والتدريب العملي. انضم إلى مجتمع الهاكرز الأخلاقيين وطوّر مهاراتك.</p>
+    </div>
+
+    <div class="social-links">
+        <!-- تلجرام -->
+        <div class="social-card">
+            <i class="fab fa-telegram social-icon"></i>
+            <div class="social-name">Telegram</div>
+            <div class="social-user">@HD_D4</div>
+            <a href="https://t.me/HD_D4" target="_blank" rel="noopener noreferrer" class="btn-social">انضم للقناة ➤</a>
+        </div>
+        <!-- تيك توك -->
+        <div class="social-card">
+            <i class="fab fa-tiktok social-icon"></i>
+            <div class="social-name">TikTok</div>
+            <div class="social-user">@sy_f18v</div>
+            <a href="https://tiktok.com/@sy_f18v" target="_blank" rel="noopener noreferrer" class="btn-social">تابعني ➤</a>
+        </div>
+        <!-- انستغرام -->
+        <div class="social-card">
+            <i class="fab fa-instagram social-icon"></i>
+            <div class="social-name">Instagram</div>
+            <div class="social-user">@syf18_</div>
+            <a href="https://www.instagram.com/syf18_?igsh=bjh1YWJjOGUxbWt1" target="_blank" rel="noopener noreferrer" class="btn-social">تابعني ➤</a>
+        </div>
+    </div>
+
+    <div class="join-section">
+        <div class="join-title">⎯⎯ انضم إلى فريقنا ⎯⎯</div>
+        <div class="join-desc">نحن نبحث عن أشخاص شغوفين بالأمن السيبراني، اختراق أخلاقي، تطوير أدوات الحماية. اكتب لنا كلمة "JOIN" عبر أحد الحسابات أعلاه أو اضغط الزر لتوجيهك للتواصل.</div>
+        <button id="joinTeamBtn" class="join-btn">
+            ✦ اكتب للانضمام ✦
+        </button>
+        <div id="joinMessage" style="margin-top: 18px; font-size: 0.85rem; color: #9effcf;"></div>
+    </div>
+
+    <div class="follow-text">
+        <span class="fingerprint">[🔐] تابع حساباتي للحصول على محتوى حصري: ثغرات، شروحات، CTF، أمن المعلومات [🔐]</span><br>
+        <span style="font-size:0.75rem; opacity:0.6;">جميع الحقوق محفوظة لفريق الأمن السيبراني | تأكد من روابط التواصل: تيليجرام، تيك توك، انستغرام</span>
+    </div>
+</div>
+
+<script>
+    const joinBtn = document.getElementById('joinTeamBtn');
+    joinBtn.addEventListener('click', () => {
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0.85)';
+        overlay.style.backdropFilter = 'blur(6px)';
+        overlay.style.zIndex = '1000';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.fontFamily = 'inherit';
+
+        const modal = document.createElement('div');
+        modal.style.backgroundColor = '#0a1428';
+        modal.style.border = '1px solid cyan';
+        modal.style.borderRadius = '2rem';
+        modal.style.padding = '2rem 1.5rem';
+        modal.style.maxWidth = '450px';
+        modal.style.width = '90%';
+        modal.style.textAlign = 'center';
+        modal.style.boxShadow = '0 0 40px rgba(0,255,255,0.3)';
+
+        modal.innerHTML = `
+            <div style="font-size: 2.5rem;">🤝💻</div>
+            <h3 style="color:#0ff; margin-bottom: 1rem;">طلب الانضمام للفريق</h3>
+            <p style="margin-bottom: 1rem;">للانضمام إلينا، أرسل رسالة تحتوي على كلمة 
+            <strong style="color:lime;">"JOIN"</strong> عبر أحد حساباتنا:</p>
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:20px;">
+                <a href="https://t.me/HD_D4" target="_blank" style="background:#0088cc; padding:10px; border-radius:40px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:8px;">
+                    <i class="fab fa-telegram"></i> Telegram: @HD_D4
+                </a>
+                <a href="https://tiktok.com/@sy_f18v" target="_blank" style="background:#000000; border:1px solid cyan; padding:10px; border-radius:40px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:8px;">
+                    <i class="fab fa-tiktok"></i> TikTok: @sy_f18v
+                </a>
+                <a href="https://www.instagram.com/syf18_?igsh=bjh1YWJjOGUxbWt1" target="_blank" style="background:#d62976; padding:10px; border-radius:40px; color:white; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:8px;">
+                    <i class="fab fa-instagram"></i> Instagram: @syf18_
+                </a>
+            </div>
+            <button id="closeModalBtn" style="margin-top:25px; background:none; border:1px solid cyan; padding:8px 20px; border-radius:30px; color:cyan; cursor:pointer;">إغلاق</button>
+            <p style="margin-top: 15px; font-size:0.7rem;">✍️ سيتم مراجعة طلبك والرد خلال 24 ساعة</p>
+        `;
+
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+        document.getElementById('closeModalBtn').addEventListener('click', () => overlay.remove());
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+    });
+</script>
+</body>
+</html>
